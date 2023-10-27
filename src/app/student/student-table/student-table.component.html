@@ -11,7 +11,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let student of studentList">
-        <td>{{ student.nombre | lowercase }}</td>
+        <td class="liStudentName">{{ student.nombre | lowercase }}</td>
         <td>{{ student.carrera }}</td>
         <td>{{ student.correo }}</td>
         <td>{{ student.semestre }}</td>
@@ -23,13 +23,13 @@
             DELETE
           </button>
           <a [routerLink]="['/student/detail', student.id]">
-            <button class="btn btn-primary">VER DETALLE</button>
+            <button class="btn btn-primary" class="verDetalleBtn">VER DETALLE</button>
           </a>
         </td>
       </tr>
     </tbody>
   </table>
-  <button class="btn btn-primary" (click)="mostrarFormulario()">AGREGAR ESTUDIANTE</button>
+  <button class="btn btn-primary" id="btnAgregar" (click)="mostrarFormulario()">AGREGAR ESTUDIANTE</button>
   <app-student-detail [student]="selectedStudent"></app-student-detail>
   <ng-container *ngIf="mostrarForm">
     <app-student-form (addStudentEvent)="agregarEstudiante($event)"

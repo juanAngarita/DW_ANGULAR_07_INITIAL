@@ -36,8 +36,12 @@ export class StudentTableComponent {
 
   //este metodo se llama cuando se emite un evento desde el hijo.
   agregarEstudiante(student: Student){
-      this.studentList.push(student);
-      this.studentService.addStudent(student);
+      //this.studentList.push(student);
+      this.studentService.addStudent(student).subscribe(
+        data => {
+          this.studentList.push(data);
+        }
+      );
   }
 
   eliminarEstudiante(student: Student){

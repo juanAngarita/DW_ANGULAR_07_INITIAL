@@ -27,7 +27,7 @@ export class StudentService {
     this.http.delete("http://localhost:8090/student/delete/" + id).subscribe();
   }
 
-  addStudent(student:Student){
-    this.http.post("http://localhost:8090/student/add", student).subscribe();
+  addStudent(student:Student): Observable<Student>{
+    return this.http.post<Student>("http://localhost:8090/student/add", student);
   }
 }

@@ -21,7 +21,7 @@
         <input type="phone" id="phone" name="phone" [(ngModel)]="formStudent.semestre">
         <br>
         <!--button type="submit" (click)="addStudentForm()">Agregar usuario</button-->
-        <button class="btn btn-primary" type="submit" [disabled]="!studentForm.form.valid">AGREGAR</button>
+        <button class="btn btn-primary" id="enviarEstudianteBtn" type="submit" [disabled]="!studentForm.form.valid">AGREGAR</button>
         <button class="btn btn-danger" (click)="cancelar()">CANCELAR</button>
     </form>
 {{studentForm.form.valid }}
