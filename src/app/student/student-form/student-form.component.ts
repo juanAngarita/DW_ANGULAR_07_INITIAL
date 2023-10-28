@@ -39,6 +39,7 @@ export class StudentFormComponent {
 
     //agregar un estudiante a partir del formulario
   addStudent(form:any){
+
       //para copiar los valores
       this.sendStudent = Object.assign({}, this.formStudent);
   

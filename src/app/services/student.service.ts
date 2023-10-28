@@ -30,4 +30,8 @@ export class StudentService {
   addStudent(student:Student): Observable<Student>{
     return this.http.post<Student>("http://localhost:8090/student/add", student);
   }
+
+  login(correo:String):Observable<Student>{
+    return this.http.get<Student>("http://localhost:8090/student/login?correo=" + correo);
+  }
 }
