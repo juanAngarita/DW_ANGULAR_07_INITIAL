@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from 'src/app/model/user';
+import { Teacher } from 'src/app/model/teacher';
 import { StudentService } from 'src/app/services/student.service';
 import { TeacherService } from 'src/app/services/teacher.service';
 
@@ -15,11 +15,12 @@ export class LoginTeachersComponent {
     private router: Router) {}
   
     //modelo
-    formUser: User = {
-      email: '',
+    formUser: Teacher = {
+      correo: '',
       password: '',
-      role: ''
-  };
+      id: 0,
+      name: ''
+    };
 
   login(form: any) {
     this.teacherService.login(this.formUser).subscribe(

@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Teacher } from '../model/teacher';
-import { User } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +24,7 @@ export class TeacherService {
     return teacher;
   }
 
-  login(usuario:User):Observable<Teacher>{
+  login(usuario:Teacher):Observable<Teacher>{
     return this.http.post<Teacher>("http://localhost:8090/teacher/login",usuario);
   }
 }

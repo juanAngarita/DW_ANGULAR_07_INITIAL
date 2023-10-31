@@ -1,3 +1,4 @@
+<div class="center_page">
 <h2>Registrarse(Estudiante)</h2>
 <form #studentForm="ngForm" (ngSubmit)="addStudent(studentForm)">
     <div class="form-group">
@@ -22,5 +23,4 @@
     <button type="submit" class="btn btn-primary" [disabled]="!studentForm.form.valid">Registrar</button>
 </form>
 <a [routerLink]="['/auth/signup/profesor']">¿Eres profesor? Ingresa acá</a>
-
-{{formStudent.carrera}}
+</div>
